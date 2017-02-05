@@ -53,7 +53,7 @@ names(train.df) <- c("subject","activity",featuresNames)
 ##create the total dataframe by binding the test and train dataset
 total <- rbind(test.df,train.df)
 
-##Create of the dataframe that contain the average of each variable for each activity and each subject.
+##Create the dataframe that contain the average of each variable for each activity and each subject.
 totalMelted <- melt(total, id = c("subject", "activity"))
 totalMean <- dcast(totalMelted, subject + activity ~ variable, mean)
 
